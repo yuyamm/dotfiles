@@ -83,6 +83,8 @@ return {
     { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
     -- Pane選択
     { key = "[", mods = "CTRL|SHIFT", action = act.PaneSelect },
+    -- Pane入れ替え
+    { key = "S", mods = "LEADER|SHIFT", action = act.PaneSelect({ mode = "SwapWithActive" }) },
     -- 選択中のPaneのみ表示
     { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 
