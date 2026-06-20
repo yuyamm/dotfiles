@@ -50,9 +50,6 @@ return {
     },
     -- コマンドパレット表示
     { key = "p", mods = "SUPER", action = act.ActivateCommandPalette },
-    -- Tab移動
-    { key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
-    { key = "Tab", mods = "SHIFT|CTRL", action = act.ActivateTabRelative(-1) },
     -- Tab入れ替え
     { key = "{", mods = "LEADER", action = act({ MoveTabRelative = -1 }) },
     -- Tab新規作成
@@ -72,9 +69,11 @@ return {
     -- 貼り付け
     { key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
 
-    -- Pane作成 leader + r or d
-    { key = "d", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "r", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    -- Pane作成 leader + Shift + hlkj
+    { key = "H", mods = "LEADER|SHIFT", action = act.SplitPane({ direction = "Left" }) },
+    { key = "L", mods = "LEADER|SHIFT", action = act.SplitPane({ direction = "Right" }) },
+    { key = "K", mods = "LEADER|SHIFT", action = act.SplitPane({ direction = "Up" }) },
+    { key = "J", mods = "LEADER|SHIFT", action = act.SplitPane({ direction = "Down" }) },
     -- Paneを閉じる leader + x
     { key = "x", mods = "LEADER", action = act({ CloseCurrentPane = { confirm = true } }) },
     -- Pane移動 leader + hlkj
@@ -129,8 +128,8 @@ return {
       { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
       { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
 
-      -- Cancel the mode by pressing escape
       { key = "Enter", action = "PopKeyTable" },
+      { key = "Escape", action = "PopKeyTable" },
     },
     activate_pane = {
       { key = "h", action = act.ActivatePaneDirection("Left") },
@@ -195,4 +194,3 @@ return {
     },
   },
 }
-

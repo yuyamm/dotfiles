@@ -75,7 +75,7 @@ config.window_padding = {
 ----------------------------------------------------
 -- Font
 ----------------------------------------------------
-config.font = wezterm.font 'FiraCode Nerd Font'
+config.font = wezterm.font 'HackGen Console NF'
 
 ----------------------------------------------------
 -- Keybinds
