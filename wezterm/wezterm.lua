@@ -7,6 +7,11 @@ config.use_ime = true
 config.audible_bell = "Disabled"
 
 ----------------------------------------------------
+-- macOS
+----------------------------------------------------
+config.native_macos_fullscreen_mode = false
+
+----------------------------------------------------
 -- Scroll
 ----------------------------------------------------
 config.enable_scroll_bar = false
@@ -86,4 +91,3 @@ config.key_tables = require("keybinds").key_tables
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
 return config
-

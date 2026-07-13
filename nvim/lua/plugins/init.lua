@@ -20,6 +20,14 @@ require("lazy").setup({
 	-- Surround text objects (cs, ds, ys)
 	{ "tpope/vim-surround" },
 
+	-- Window resize mode
+	{
+		"simeji/winresizer",
+		init = function()
+			vim.g.winresizer_start_key = "<C-w>e"
+		end,
+	},
+
 	-- Fuzzy finder
 	{
 		"junegunn/fzf",
@@ -35,17 +43,6 @@ require("lazy").setup({
 				theme = "wave",
 			})
 			vim.cmd.colorscheme("kanagawa")
-		end,
-	},
-
-	-- Markdown rendering inside Neovim
-	{
-		"MeanderingProgrammer/render-markdown.nvim",
-		ft = { "markdown" },
-		opts = {},
-		config = function(_, opts)
-			require("render-markdown").setup(opts)
-			vim.keymap.set("n", "<leader>mr", "<cmd>RenderMarkdown toggle<CR>", { desc = "Toggle markdown render" })
 		end,
 	},
 
@@ -141,7 +138,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "python", "lua", "javascript", "typescript", "json", "yaml", "html", "css", "bash", "markdown", "markdown_inline", "vim", "vimdoc" },
+			ensure_installed = { "python", "lua", "dart", "javascript", "typescript", "json", "yaml", "html", "css", "bash", "markdown", "markdown_inline", "vim", "vimdoc" },
 			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
